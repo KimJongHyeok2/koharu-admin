@@ -1,0 +1,96 @@
+.spinner-normal {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spinner-normal div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border: 4px solid #102770;
+  border-radius: 50%;
+  animation: spinner-normal 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #102770 transparent transparent transparent;
+}
+.spinner-normal div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-normal div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-normal div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-normal {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  border-radius: inherit;
+}
+.btn-primary {
+  background-color: #102770;
+  border-color: #102770;
+}
+
+.spinner-square-to-circle {
+  height: 48px;
+  width: 48px;
+  color: #102770;
+  position: relative;
+  display: inline-block;
+  animation: rotateSquareToCircle 3s ease infinite; }
+.spinner-square-to-circle div {
+  height: 0;
+  width: 0;
+  box-sizing: border-box;
+  border: 5px solid;
+  position: absolute;
+  top: 40%; }
+.spinner-square-to-circle div:nth-child(1) {
+  left: 0;
+  animation: moveRight 2s ease infinite; }
+.spinner-square-to-circle div:nth-child(2) {
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  animation: toCircle 2s ease infinite; }
+.spinner-square-to-circle div:nth-child(3) {
+  right: 0;
+  animation: moveLeft 2s ease infinite; }
+
+@keyframes moveLeft {
+  25% {
+    transform: translateX(-19px); }
+  50% {
+    transform: translateX(0); }
+  75% {
+    transform: translateX(-19px);
+    border-radius: 50%; } }
+
+@keyframes moveRight {
+  25% {
+    transform: translateX(19px); }
+  50% {
+    transform: translateX(0); }
+  75% {
+    transform: translateX(19px);
+    border-radius: 50%; } }
+
+@keyframes toCircle {
+  50% {
+    border-radius: 0%; } }
+
+@keyframes rotateSquareToCircle {
+  50% {
+    transform: rotate(-270deg); } }
